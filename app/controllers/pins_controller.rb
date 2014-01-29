@@ -4,6 +4,9 @@ class PinsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
+    if !user_signed_in?
+      render :template => 'pages/home'
+    end
     @pins = Pin.all
   end
 
