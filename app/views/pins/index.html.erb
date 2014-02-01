@@ -5,7 +5,7 @@
       <div class="panel-body">
         <%= pin.description %>
         <div style="color:#aaa;font-size:12px">
-          <%= pin.user.email if pin.user %>
+          <%= pin.user.name %>
         </div>
         <% if user_signed_in? && (pin.user_id == current_user.id) %>
           <div>

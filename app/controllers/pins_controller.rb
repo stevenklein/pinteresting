@@ -7,7 +7,7 @@ class PinsController < ApplicationController
     if !user_signed_in?
       render :template => 'pages/home'
     end
-    @pins = Pin.all
+    @pins = Pin.all.order(created_at: :desc)
   end
 
   def show
